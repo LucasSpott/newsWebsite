@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>My first three.js app</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'js/three.min.js' %}"></script>
+</head>
+<body>
+    <header>
+        <a href="#" class="h1-Header">Ultima Hora</a>
+        <a href="#" class="h2-Header">Início</h2>
+        <a href="#" class="h2-Header">Tema</a>
+    </header>
+    <main class="main">
+        
+        <div class="container">
+                <div class="content">
+                    {% for title, description, image, url in news %}
+                <div class="cards">
+                <a href="{{url}}" target="_blank" style="text-decoration: none">
+                <img id="imgdanotice" src="{{ image }}" {% static 'js/three.min.js'%}>
+                    <h2 class="h2-cards">{{ title }}</h2>
+                    <p class="p-cards">{{ description }}</p>
+                </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="content-1">
+            <a href="#" class="p-footer">Home</a>
+            <a href="#" class="p-footer">Futuro</a>
+            <a href="#" class="p-footer">Tecnologia</a>
+            <a href="#" class="p-footer">Saúde</a>
+            <a href="#" class="p-footer">Educação</a>
+            <a href="#" class="p-footer">Esporte</a>
+            <a href="#" class="p-footer">Entretenimento</a>
+            <a href="#" class="p-footer">Política</a>
+            <a href="#" class="p-footer">Economia</a>
+        </div>
+        <div class="content-2">
+            <a href="#" class="p-footer">Sobre</a>
+            <a href="#" class="p-footer">Contato</a>
+            <a href="#" class="p-footer">Termos de Uso</a>
+            <a href="#" class="p-footer">Política de Privacidade</a>
+        </div>
+        <div class="content-n">
+            <h3>©Criado e administrado por Lucas - 2022</h3>
+        </div>
+    </footer>
+    </body>
+    </html>
